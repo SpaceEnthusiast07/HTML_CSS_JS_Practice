@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                font-family: Arial;
+                margin: 0;
+                padding: 0;
+                color: white;
+            }
+
+            .sidebar {
+                background-color: blueviolet;
+                width: clamp(80px, 20%, 250px);
+                height: 100vh;
+            }
+
+            .sidebar_title {
+                text-align: center;
+            }
+
+            .sidebar_item {
+                padding: 10px 20px;
+                margin: 6px;
+                border: 2px solid blue;
+                border-radius: 6px;
+            }
+
+            .sidebar_item:hover {
+                background-color: blue;
+            }
+
+            .sidebar_item_label {
+                color: blue;
+            }
+
+            .sidebar_item_label:hover {
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="sidebar">
+            <h1 class="sidebar_title">APP</h1>
+            <div class="sidebar_item">
+                <label class="sidebar_item_label">Home</label>
+            </div>
+            <div class="sidebar_item">
+                <label class="sidebar_item_label">Add</label>
+            </div>
+            <div class="sidebar_item">
+                <label class="sidebar_item_label">Track</label>
+            </div>
+            <div class="sidebar_item">
+                <label class="sidebar_item_label">Account</label>
+            </div>
+        </div>
+    </body>
+</html>
