@@ -1,8 +1,112 @@
+/*Set default styles for everything*/
 * {
     margin: 0;
     padding: 0;
 }
 
+/*Style the main body of the page*/
 body {
     min-height: 100vh;
+    background-image: url(landscape.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*Style the nav bar container*/
+nav {
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*Style the unordered list (<ul>) within the nav bar*/
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/*Style the list items (<li>) within the nav bar*/
+nav li {
+    height: 50px;
+}
+
+/*Style the link (<a>) elements within each list item*/
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+/*Style the link elements (<a>) when they are hovered over*/
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+/*Make the first button in the nav bar stick to the left hand side*/
+nav li:first-child {
+    margin-right: auto;
+}
+
+/*Style the sidebar*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+/*Style each list item within the sidebar*/
+.sidebar li {
+    width: 100%;
+}
+
+/*Style each link element within the sidebar*/
+.sidebar a {
+    width: 100%;
+}
+
+/*Style both menu bar icons*/
+.menu_icon {
+    display: none;
+}
+.menu_icon svg {
+    height: 2em;
+    width: 2em;
+    fill: black;
+}
+
+/*Media query to hide navbar elements when screen gets too narrow
+i.e. when on modile*/
+@media(max-width: 800px) {
+    .hide_on_modile {
+        display: none;
+    }
+
+    .menu_icon {
+        display: flex;
+    }
+}
+
+/*Media query to make sidebar full screen when screen gets too narrow
+i.e. when on modile*/
+@media(max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
 }

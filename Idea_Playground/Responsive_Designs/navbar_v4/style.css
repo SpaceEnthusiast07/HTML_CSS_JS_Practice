@@ -1,0 +1,156 @@
+:root {
+    --primary-light-grey: #F8F8F8;
+    --primary-mid-grey: #989898;
+    --primary-dark-grey: #646D72;
+    --primary-light-blue: #E7F1F9;
+    --primary-dark-blue: #1D6EB7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary-dark-grey);
+}
+
+/*Set styles for the whole page*/
+body {
+    min-height: 100vh;
+    background-color: white;
+}
+
+/*Style the main content on the page*/
+main {
+    padding: 16px;
+}
+
+/*Style the nav bar*/
+nav {
+    background-color: var(--primary-light-grey);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*Style the list*/
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+/*Style the list items*/
+nav li {
+    display: flex;
+}
+
+/*Style each nav bar item*/
+nav a {
+    display: flex;
+    text-decoration: none;
+    padding: 1em 2em;
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease, opacity 150ms ease;
+}
+nav a:hover {
+    background-color: var(--primary-mid-grey);
+    color: var(--primary-light-grey);
+}
+nav a:active {
+    opacity: 0.8;
+}
+
+/*Style the main item (home) in the nav bar*/
+nav .home_li {
+    margin-right: auto;
+}
+
+/*Style the active link*/
+.active_link {
+    border-bottom: 2px solid var(--primary-dark-blue);
+}
+
+/*Style the accent link*/
+nav .accent_link {
+    background-color: var(--primary-dark-blue);
+    color: var(--primary-light-grey);
+}
+
+/*Style the open and close sidebar buttons*/
+#open_sidebar_btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 1em;
+    margin-left: auto;
+    cursor: pointer;
+}
+#close_sidebar_btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+    margin-left: auto;
+}
+#open_sidebar_btn:hover, #close_sidebar_btn:hover {
+    background-color: var(--primary-mid-grey);
+}
+#open_sidebar_btn:hover svg, #close_sidebar_btn:hover svg {
+    fill: var(--primary-light-grey);
+}
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    display: none;
+    cursor: pointer;
+}
+
+/*Switch to mobile layout when screen bets too narrow*/
+@media screen and (max-width: 700px) {
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(15em, 100%);
+        height: 100vh;
+        box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        transition: right 300ms ease-out, width 0.15s ease;
+    }
+
+    nav.show {
+        right: 0;
+    }
+    nav.show ~ #overlay {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+    }
+
+    nav .home_li {
+        margin-right: 0;
+    }
+
+    nav .active_link {
+        border-bottom: none;
+    }
+
+    #open_sidebar_btn, #close_sidebar_btn {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    nav {
+        width: 100%;
+    }
+}
