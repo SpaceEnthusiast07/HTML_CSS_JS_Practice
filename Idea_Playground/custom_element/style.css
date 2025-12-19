@@ -1,0 +1,8 @@
+code_block {
+    display: flex;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    padding: 2px 4px;
+    font-family: Consolas, Lucida Console;
+}
